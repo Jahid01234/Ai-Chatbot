@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gpt_markdown/gpt_markdown.dart';
 
 class MessageBubble extends StatelessWidget {
   final String message;
@@ -21,10 +22,11 @@ class MessageBubble extends StatelessWidget {
           color: isUser ? Colors.blue : Colors.grey.shade300,
           borderRadius: BorderRadius.circular(12),
         ),
-        child: Text(
-          message,
-          style: TextStyle(color: isUser ? Colors.white : Colors.black),
-        ),
+        child: GptMarkdown(
+            message,
+            style: TextStyle(color: isUser ? Colors.white : Colors.black),
+          ),
+
       ),
     );
   }
