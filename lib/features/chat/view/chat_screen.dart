@@ -14,12 +14,33 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.teal,
         title: Text("AI Chatbot"),
         actions: [
           IconButton(
-            icon: Icon(Icons.delete),
-            onPressed: () => controller.clearChat(),
-          )
+            icon: Icon(Icons.more_vert),
+            onPressed: () {
+              Get.dialog(
+                AlertDialog(
+                  title: Text("Options"),
+                  content: Text("Choose an action:"),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        controller.clearChat();
+                        Get.back();
+                      },
+                      child: Text("Clear Chat"),
+                    ),
+                    TextButton(
+                      onPressed: () => Get.back(),
+                      child: Text("Close"),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
         ],
       ),
       body: Column(
