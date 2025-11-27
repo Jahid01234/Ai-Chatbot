@@ -1,4 +1,5 @@
 import 'package:ai_chatbot/features/chat/view/chat_screen.dart';
+import 'package:ai_chatbot/features/splash/view/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +15,7 @@ class AiChatbotApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white
       ),
-      home: ChatScreen()
+      home: SplashScreen()
     );
   }
 }

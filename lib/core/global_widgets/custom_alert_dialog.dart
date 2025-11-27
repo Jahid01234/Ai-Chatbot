@@ -1,3 +1,4 @@
+import 'package:ai_chatbot/core/style/global_text_style.dart';
 import 'package:flutter/material.dart';
 
 class CustomAlertDialog extends StatelessWidget {
@@ -28,9 +29,9 @@ class CustomAlertDialog extends StatelessWidget {
           children: [
             Text(
               title,
-              style: const TextStyle(
+              style: globalTextStyle(
                 fontSize: 20,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
               ),
             ),
 
@@ -38,9 +39,10 @@ class CustomAlertDialog extends StatelessWidget {
 
             Text(
               description,
-              style: const TextStyle(
-                fontSize: 16,
+              style: globalTextStyle(
+                fontSize: 14,
                 color: Colors.black54,
+                fontWeight: FontWeight.w400,
               ),
             ),
 
@@ -51,12 +53,18 @@ class CustomAlertDialog extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: onCancel,
-                  child: const Text("Cancel"),
-                ),
+                  child:  Text("Cancel",style: globalTextStyle(
+                    fontSize: 15,
+                    color: Colors.black54,
+                  ),
+                  ),),
                 const SizedBox(width: 8),
                 TextButton(
                   onPressed: onConfirm,
-                  child: const Text("Delete"),
+                  child: Text("Delete",style: globalTextStyle(
+                    fontSize: 15,
+                    color: Colors.black54,
+                  ),),
                 ),
               ],
             )

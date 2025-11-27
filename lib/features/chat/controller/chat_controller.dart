@@ -1,5 +1,3 @@
-
-
 import 'package:ai_chatbot/core/services/local_services/chat_database.dart';
 import 'package:ai_chatbot/features/chat/model/chat_model.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +14,7 @@ class ChatController extends GetxController {
   final db = ChatDatabase.instance;
   RxList<ChatModel> messages = <ChatModel>[].obs;
   RxBool isLoading = false.obs;
+  RxBool isInitLoading = true.obs;
 
 
 
@@ -23,6 +22,9 @@ class ChatController extends GetxController {
   void onInit() {
     super.onInit();
     loadMessages();
+    Future.delayed(Duration(seconds: 1), () {
+      isInitLoading.value = false;
+    });
   }
 
   // Load messages from local database.......
