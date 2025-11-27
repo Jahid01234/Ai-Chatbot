@@ -35,19 +35,32 @@ class ChatDatabase {
     );
   }
 
+  // Write message.....
   Future<int> insertMessage(ChatModel chat) async {
     final db = await instance.database;
-    return await db.insert('chats', chat.toMap());
+    return await db.insert(
+      'chats',
+      chat.toMap(),
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
   }
 
+  // Read/Get message.....
   Future<List<ChatModel>> getMessages() async {
     final db = await instance.database;
-    final data = await db.query('chats');
+    final data = await db.query('chats',orderBy: "id ASC",);
     return data.map((e) => ChatModel.fromMap(e)).toList();
   }
 
+  // Delete all chat.......
   Future<void> deleteChat() async {
-    final db = await database;
+    final db = await instance.database;
     await db.delete("chats");
+  }
+
+  // Close database...........
+  Future close() async {
+    final db = await instance.database;
+    db.close();
   }
 }
