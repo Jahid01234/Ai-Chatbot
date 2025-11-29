@@ -18,8 +18,16 @@ class CustomAlertDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
+      backgroundColor: Theme.of(context).brightness == Brightness.dark
+          ? Colors.black
+          : Colors.white,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16),
+          side: BorderSide(
+            color:Theme.of(context).brightness == Brightness.dark
+                ? Colors.grey
+                : Colors.transparent,
+          )
       ),
       child: Padding(
         padding: const EdgeInsets.all(20),
@@ -30,8 +38,12 @@ class CustomAlertDialog extends StatelessWidget {
             Text(
               title,
               style: globalTextStyle(
+                context,
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white
+                    : Colors.black,
               ),
             ),
 
@@ -40,8 +52,11 @@ class CustomAlertDialog extends StatelessWidget {
             Text(
               description,
               style: globalTextStyle(
+                context,
                 fontSize: 14,
-                color: Colors.black54,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white54
+                    : Colors.black54,
                 fontWeight: FontWeight.w400,
               ),
             ),
@@ -53,21 +68,33 @@ class CustomAlertDialog extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: onCancel,
-                  child:  Text("Cancel",style: globalTextStyle(
-                    fontSize: 15,
-                    color: Colors.black54,
+                  child: Text(
+                    "Cancel",
+                    style: globalTextStyle(
+                      context,
+                      fontSize: 15,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white54
+                          : Colors.black54,
+                    ),
                   ),
-                  ),),
+                ),
                 const SizedBox(width: 8),
                 TextButton(
                   onPressed: onConfirm,
-                  child: Text("Delete",style: globalTextStyle(
-                    fontSize: 15,
-                    color: Colors.black54,
-                  ),),
+                  child: Text(
+                    "Delete",
+                    style: globalTextStyle(
+                      context,
+                      fontSize: 15,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white54
+                          : Colors.black54,
+                    ),
+                  ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

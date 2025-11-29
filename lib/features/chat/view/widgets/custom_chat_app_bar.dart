@@ -14,10 +14,12 @@ class CustomChatAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.teal,
+      backgroundColor: Theme.of(context).colorScheme.primary,
+      iconTheme: Theme.of(context).iconTheme,
       title: Text(
         "AI Chatbot",
         style: globalTextStyle(
+          context,
           color: Colors.white,
           fontWeight: FontWeight.w700,
           fontSize: 22,

@@ -37,6 +37,7 @@ class MessageBubble extends StatelessWidget {
             GptMarkdown(
               message,
               style: globalTextStyle(
+                context,
                 color: isUser ? Colors.white : Colors.black,
               ),
             ),
@@ -45,6 +46,7 @@ class MessageBubble extends StatelessWidget {
             Text(
               formattedTime,
               style: globalTextStyle(
+                context,
                 color: isUser ? Colors.white70 : Colors.black54,
                 fontSize: 10,
               ),

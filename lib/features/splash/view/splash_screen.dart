@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -36,6 +36,7 @@ class SplashScreen extends StatelessWidget {
               text: TextSpan(
                 text: "Ai Chat",
                 style: globalTextStyle(
+                  context,
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
                   fontSize: 24,
@@ -44,6 +45,7 @@ class SplashScreen extends StatelessWidget {
                   TextSpan(
                     text: "bot",
                     style: globalTextStyle(
+                      context,
                       color: Colors.orange,
                       fontWeight: FontWeight.w800,
                       fontSize: 24,

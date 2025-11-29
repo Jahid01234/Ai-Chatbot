@@ -1,10 +1,12 @@
-import 'package:ai_chatbot/features/chat/view/chat_screen.dart';
-import 'package:ai_chatbot/features/splash/view/splash_screen.dart';
+import 'package:ai_chatbot/core/routes/app_routes.dart';
+import 'package:ai_chatbot/core/theme/dark_theme/dark_theme.dart';
+import 'package:ai_chatbot/core/theme/light_theme/light_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AiChatbotApp extends StatelessWidget {
-  const AiChatbotApp({super.key});
+  final String initialRoute;
+  const AiChatbotApp({super.key, required this.initialRoute});
 
 
   @override
@@ -12,10 +14,11 @@ class AiChatbotApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Ai Chatbot App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white
-      ),
-      home: SplashScreen()
+        getPages: AppRoutes.routes,
+        initialRoute: initialRoute,
+        theme: lightTheme,
+        darkTheme: darkTheme,
+
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:ai_chatbot/features/chat/controller/chat_controller.dart';
 import 'package:ai_chatbot/features/chat/view/widgets/build_thinking_loader.dart';
 import 'package:ai_chatbot/features/chat/view/widgets/custom_chat_app_bar.dart';
 import 'package:ai_chatbot/features/chat/view/widgets/message_bubble.dart';
+import 'package:ai_chatbot/features/chat/view/widgets/my_drawer.dart';
 import 'package:ai_chatbot/features/chat/view/widgets/shimmer_loader_widgets.dart';
 import 'package:ai_chatbot/features/chat/view/widgets/text_field_and_send_widget.dart';
 import 'package:flutter/material.dart';
@@ -55,6 +56,7 @@ class ChatScreen extends StatelessWidget {
           ],
         );
       }),
+      drawer: MyDrawer(),
     );
   }
 }

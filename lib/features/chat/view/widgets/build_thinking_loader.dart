@@ -23,6 +23,7 @@ class BuildThinkingLoader extends StatelessWidget {
                 "AI is thinking...",
                 speed: Duration(milliseconds: 70),
                 textStyle: globalTextStyle(
+                  context,
                   color: Colors.black87,
                   fontSize: 15,
                 ),
