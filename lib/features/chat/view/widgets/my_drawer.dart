@@ -1,3 +1,4 @@
+import 'package:ai_chatbot/core/style/global_text_style.dart';
 import 'package:ai_chatbot/features/settings/view/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -41,16 +42,23 @@ class MyDrawer extends StatelessWidget {
             ),
           ),
           // Logo
-          DrawerHeader(
-            child: ClipOval(
-              child: Image.asset(
-                "assets/images/chatbot.jpg",
-                fit: BoxFit.cover,
-              ),
+
+          const SizedBox(height: 60),
+           ClipOval(
+            child: Image.asset(
+              "assets/images/chatbot.jpg",
+              fit: BoxFit.cover,
+              scale: 6,
             ),
           ),
-          const SizedBox(height: 20),
-
+          const SizedBox(height: 30),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 80),
+            child: Divider(
+              color: Theme.of(context).colorScheme.inverseSurface
+            ),
+          ),
+          const SizedBox(height: 50),
           // Home list tile
           Padding(
             padding: const EdgeInsets.only(left: 15, right: 8),

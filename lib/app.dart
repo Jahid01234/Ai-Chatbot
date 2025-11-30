@@ -14,11 +14,10 @@ class AiChatbotApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Ai Chatbot App',
       debugShowCheckedModeBanner: false,
-        getPages: AppRoutes.routes,
-        initialRoute: initialRoute,
-        theme: lightTheme,
-        darkTheme: darkTheme,
-
+      getPages: AppRoutes.routes,
+      initialRoute: initialRoute,
+      theme: lightTheme,
+      darkTheme: darkTheme,
     );
   }
 }

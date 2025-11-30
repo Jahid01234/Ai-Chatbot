@@ -17,11 +17,5 @@ ThemeData lightTheme = ThemeData(
   iconTheme: IconThemeData(
     color: Colors.white,
   ),
-  textTheme: TextTheme(
-    displayLarge: TextStyle(color: Colors.white),
-    displayMedium: TextStyle(color: Colors.white),
-    bodyLarge: TextStyle(color: Colors.white.withAlpha(200)),
-    bodyMedium: TextStyle(color: Colors.white.withAlpha(180)),
-    labelLarge: TextStyle(color: Colors.white),
-  ),
+
 );

@@ -1,3 +1,4 @@
+import 'package:ai_chatbot/core/style/global_text_style.dart';
 import 'package:flutter/material.dart';
 
 class TextFieldAndSendWidget extends StatelessWidget {
@@ -10,8 +11,6 @@ class TextFieldAndSendWidget extends StatelessWidget {
     required this.sendButton,
   });
 
-
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,13 +20,25 @@ class TextFieldAndSendWidget extends StatelessWidget {
           Expanded(
             child: TextField(
               controller: controller,
-              cursorColor: Colors.teal,
+              cursorColor: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.white
+                  : Colors.black,
+              style: globalTextStyle(
+                context,
+                color: Theme.of(context).colorScheme.inverseSurface,
+              ),
               decoration: InputDecoration(
                 hintText: "Type message...",
+                hintStyle: globalTextStyle(
+                  context,
+                  color: Theme.of(context).colorScheme.inverseSurface,
+                ),
                 border: OutlineInputBorder(),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                      color: Colors.teal,
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white
+                        : Colors.black,
                   ),
                 ),
               ),
@@ -41,14 +52,16 @@ class TextFieldAndSendWidget extends StatelessWidget {
               width: 50,
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: Colors.teal,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.blueGrey
+                    : Colors.teal,
                 borderRadius: BorderRadius.circular(50),
               ),
               child: Center(
-                child: Icon(
-                    Icons.send,
-                    color: Colors.white,
-                ),
+                  child: Icon(
+                      Icons.send,
+                      color: Colors.white,
+                  ),
               ),
             ),
           ),
